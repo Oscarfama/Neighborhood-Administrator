@@ -7,6 +7,12 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
+import {LogPage} from "../pages/log/log";
+import {ChatPage} from "../pages/chat/chat";
+import {AccountStatusPage} from "../pages/account-status/account-status";
+import {ManageUsersPage} from "../pages/manage-users/manage-users";
+import {ScanPage} from "../pages/scan/scan";
 
 
 @Component({
@@ -29,8 +35,13 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Acceso Preferente', component: PreferentAccessPage },
+      { title: 'Historial', component: LogPage },
+      { title: 'Estado de cuenta', component: AccountStatusPage },
+      { title: 'Chat con seguridad', component: ChatPage },
+      { title: 'Administrar usuarios', component: ManageUsersPage },
+      { title: 'Escanear', component: ScanPage }
+
     ];
   }
 

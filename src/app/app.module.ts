@@ -9,13 +9,26 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {AccountStatusPage} from "../pages/account-status/account-status";
+import {ChatPage} from "../pages/chat/chat";
+import {LogPage} from "../pages/log/log";
+import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
+import {ScanPage} from "../pages/scan/scan";
+import {ManageUsersPage} from "../pages/manage-users/manage-users";
 
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    AccountStatusPage,
+    ChatPage,
+    HelloIonicPage,
+    LogPage,
+    PreferentAccessPage,
+    ScanPage,
+    ManageUsersPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +39,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    AccountStatusPage,
+    ChatPage,
+    HelloIonicPage,
+    LogPage,
+    PreferentAccessPage,
+    ScanPage,
+    ManageUsersPage
   ],
   providers: [
     StatusBar,
