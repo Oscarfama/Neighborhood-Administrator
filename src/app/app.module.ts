@@ -15,6 +15,7 @@ import {LogPage} from "../pages/log/log";
 import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
 import {ScanPage} from "../pages/scan/scan";
 import {ManageUsersPage} from "../pages/manage-users/manage-users";
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ManageUsersPage} from "../pages/manage-users/manage-users";
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage
+    ManageUsersPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {ManageUsersPage} from "../pages/manage-users/manage-users";
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage
+    ManageUsersPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
