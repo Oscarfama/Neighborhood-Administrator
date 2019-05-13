@@ -45,7 +45,8 @@ const fbConfig = {
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage
+    ManageUsersPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ const fbConfig = {
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage
+    ManageUsersPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
