@@ -15,6 +15,23 @@ import {LogPage} from "../pages/log/log";
 import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
 import {ScanPage} from "../pages/scan/scan";
 import {ManageUsersPage} from "../pages/manage-users/manage-users";
+import {AngularFireModule} from "@angular/fire";
+
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+
+
+const fbConfig = {
+  apiKey: "AIzaSyANtuSccI6MqcYjAjhFBI0ANhyj60DS-Do",
+  authDomain: "neighborhood-administrator.firebaseapp.com",
+  databaseURL: "https://neighborhood-administrator.firebaseio.com",
+  projectId: "neighborhood-administrator",
+  storageBucket: "neighborhood-administrator.appspot.com",
+  messagingSenderId: "628322521618",
+  appId: "1:628322521618:web:27cbdbb926a11f5b"
+};
 
 @NgModule({
   declarations: [
@@ -33,6 +50,11 @@ import {ManageUsersPage} from "../pages/manage-users/manage-users";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(fbConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
