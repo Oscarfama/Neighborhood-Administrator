@@ -21,6 +21,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireStorageModule } from "@angular/fire/storage";
+import {LoginPage} from "../pages/login/login";
 
 
 const fbConfig = {
@@ -46,7 +47,7 @@ const fbConfig = {
     PreferentAccessPage,
     ScanPage,
     ManageUsersPage,
-    LoginPage
+    LoginPage,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,7 @@ const fbConfig = {
     PreferentAccessPage,
     ScanPage,
     ManageUsersPage,
-    LoginPage
+    LoginPage,
   ],
   providers: [
     StatusBar,

@@ -1,33 +1,36 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MyApp } from '../../app/app.component';
-import { PreferentAccessPage } from '../preferent-access/preferent-access';
-import { HelloIonicPage } from '../hello-ionic/hello-ionic';
-
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams } from 'ionic-angular';
+import { AngularFireAuth} from "@angular/fire/auth";
+import { AlertController } from 'ionic-angular';
+import {ManageUsersPage} from "../manage-users/manage-users";
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  username:string;
+  password:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public angularFireAuth: AngularFireAuth,public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login()
-  {
-    this.navCtrl.push(HelloIonicPage);
+  login(email,password){
+    this.angularFireAuth.auth.signInWithEmailAndPassword(email,password).then((user) => {
+      this.navCtrl.push(ManageUsersPage)
+    }).catch( (error) => this.displayErrorAlert(error));
   }
-
+  displayErrorAlert(error) {
+    const alert = this.alertCtrl.create({
+      title: 'Error!',
+      subTitle: error.message,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }
