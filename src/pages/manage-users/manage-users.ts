@@ -17,6 +17,7 @@ import {ChatPage} from "../chat/chat";
 export class ManageUsersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.get('username'));
   }
 
   ionViewDidLoad() {

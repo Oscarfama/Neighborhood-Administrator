@@ -5,4 +5,23 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="chat" *ngFor="let chat of chatRef | async">
+    <div class="me" *ngIf="uid == chat.UserID">
+      {{chat.Message}}
+    </div>
+    <div class="you" *ngIf="uid != chat.UserID">
+      <span class="name">
+        {{chat.Name}}
+      </span> <br>
+      {{chat.Message}}
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input placeholder="Type..." type="text" [(ngModel)]="text"></ion-input>
+    <button (click)="sendMessage()">
+    </button>
+  </ion-item>
+</ion-footer>

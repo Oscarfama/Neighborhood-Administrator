@@ -9,7 +9,7 @@ import {ManageUsersPage} from "../manage-users/manage-users";
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  username:string;
+  email:string;
   password:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -21,7 +21,7 @@ export class LoginPage {
   }
 
   login(email,password){
-    this.angularFireAuth.auth.signInWithEmailAndPassword(email,password).then((user) => {
+    this.angularFireAuth.auth.signInWithEmailAndPassword(email,password).then(() => {
       this.navCtrl.push(ManageUsersPage)
     }).catch( (error) => this.displayErrorAlert(error));
   }
