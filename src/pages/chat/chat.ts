@@ -5,13 +5,6 @@ import {AngularFireStorage} from "@angular/fire/storage";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireAuth} from "@angular/fire/auth";
 
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 //@IonicPage()
 @Component({
   selector: 'page-chat',
