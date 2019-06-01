@@ -1,16 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {AngularFireDatabase} from "@angular/fire/database";
-import {AngularFireStorage} from "@angular/fire/storage";
-import {AngularFirestore} from "@angular/fire/firestore";
-import {AngularFireAuth} from "@angular/fire/auth";
-
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ChatRoomPage} from "../chat-room/chat-room";
 
 //@IonicPage()
 @Component({
@@ -19,30 +9,37 @@ import {AngularFireAuth} from "@angular/fire/auth";
 })
 export class ChatPage {
 
-  text: string;
-  chatRef:any;
-  uid:string;
+  username:string = '';
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public fs: AngularFirestore,
-              public af: AngularFireAuth) {
-    this.uid=localStorage.getItem('userid');
-    this.chatRef = this.fs.collection('chats').valueChanges();
+
+
+  constructor(public navCtrl: NavController,public alert: AlertController) {
+
   }
-  sendMessage(){
-    if(this.text != ''){
-      this.fs.collection('chats').add({
-        Name:this.af.auth.currentUser.displayName,
-        Message:this.text,
-        UserID: this.af.auth.currentUser.uid,
-      });this.text='';
+
+  logUser(){
+    if (/^[a-zA-Z0-9]+$/.test(this.username))
+    {
+      this.navCtrl.push(ChatRoomPage, {
+        username:this.username
+      });
+    }else {
+      this.alertShow('Error', 'Invalid Username');
+
     }
   }
-
   ionViewDidLoad() {
 
     console.log('ionViewDidLoad ChatPage');
+  }
+   alertShow(title:string,message:string){
+    const alert = this.alert.create({
+      title: title,
+      subTitle: message,
+      buttons: ['OK']
+    });
+
+    alert.present();
   }
 
 }

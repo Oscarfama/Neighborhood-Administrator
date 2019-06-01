@@ -22,6 +22,9 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import {LoginPage} from "../pages/login/login";
+import {RouterModule, Routes} from "@angular/router";
+import {ChatComponent} from "../components/chat/chat.component";
+import {ChatRoomPage} from "../pages/chat-room/chat-room";
 
 
 const fbConfig = {
@@ -34,9 +37,15 @@ const fbConfig = {
   appId: "1:628322521618:web:27cbdbb926a11f5b"
 };
 
+const appRoutes: Routes= [
+  { path: 'chats/:id', component: ChatComponent }
+]
+
 @NgModule({
   declarations: [
+    ChatComponent,
     MyApp,
+    ChatRoomPage,
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
@@ -51,6 +60,7 @@ const fbConfig = {
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing:true}),
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(fbConfig),
     AngularFirestoreModule,
@@ -62,6 +72,7 @@ const fbConfig = {
   entryComponents: [
     MyApp,
     HelloIonicPage,
+    ChatRoomPage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
