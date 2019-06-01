@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ChatPage} from "../chat/chat";
 
 /**
  * Generated class for the ManageUsersPage page.
@@ -16,10 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ManageUsersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.get('username'));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManageUsersPage');
+  }
+  goToChat(){
+    this.navCtrl.push(ChatPage);
   }
 
 }
