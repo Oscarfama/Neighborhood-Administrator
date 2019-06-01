@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth} from "@angular/fire/auth";
 import { AlertController } from 'ionic-angular';
 import {ManageUsersPage} from "../manage-users/manage-users";
+import {MyApp} from "../../app/app.component";
+import { Platform, MenuController, Nav } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -13,7 +15,8 @@ export class LoginPage {
   password:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public angularFireAuth: AngularFireAuth,public alertCtrl: AlertController) {
+              public angularFireAuth: AngularFireAuth,public alertCtrl: AlertController,
+                public menu: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -22,7 +25,8 @@ export class LoginPage {
 
   login(email,password){
     this.angularFireAuth.auth.signInWithEmailAndPassword(email,password).then((user) => {
-      this.navCtrl.push(ManageUsersPage)
+      this.menu.enable(true, 'first');
+      this.menu.open('first');
     }).catch( (error) => this.displayErrorAlert(error));
   }
   displayErrorAlert(error) {
