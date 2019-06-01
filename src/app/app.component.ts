@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, Input, ViewChild} from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -23,20 +23,22 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = ManageUsersPage;
+
+  rootPage = HelloIonicPage;
+
   pages: Array<{title: string, component: any}>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
   ) {
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
-      {title: 'Inicio', component: HelloIonicPage },
+      {title: 'Inicio', component: LoginPage },
       { title: 'Acceso Preferente', component: PreferentAccessPage },
       { title: 'Historial', component: LogPage },
       { title: 'Estado de cuenta', component: AccountStatusPage },
