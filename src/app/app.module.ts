@@ -24,6 +24,7 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
 import {LoginPage} from "../pages/login/login";
 import {RouterModule, Routes} from "@angular/router";
 import {ChatComponent} from "../components/chat/chat.component";
+import {ChatRoomPage} from "../pages/chat-room/chat-room";
 
 
 const fbConfig = {
@@ -44,6 +45,7 @@ const appRoutes: Routes= [
   declarations: [
     ChatComponent,
     MyApp,
+    ChatRoomPage,
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
@@ -70,6 +72,7 @@ const appRoutes: Routes= [
   entryComponents: [
     MyApp,
     HelloIonicPage,
+    ChatRoomPage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
