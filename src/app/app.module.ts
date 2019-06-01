@@ -25,6 +25,7 @@ import {LoginPage} from "../pages/login/login";
 import {RouterModule, Routes} from "@angular/router";
 import {ChatComponent} from "../components/chat/chat.component";
 import {ChatRoomPage} from "../pages/chat-room/chat-room";
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 
 const fbConfig = {
@@ -87,7 +88,8 @@ const appRoutes: Routes= [
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}
