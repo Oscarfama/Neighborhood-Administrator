@@ -7,7 +7,6 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
 
   <h3>Bienvenido</h3>
@@ -22,4 +21,11 @@
     <button ion-button color="primary" menuToggle>Menu</button>
   </p>
 
+  <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="secondary" (click)="goToChat()"><ion-icon name="chatbubbles"></ion-icon></button>
+      <button ion-fab color="secondary" (click)="scan()"><ion-icon name="qr-scanner"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

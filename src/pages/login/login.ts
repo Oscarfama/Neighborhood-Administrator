@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuth} from "@angular/fire/auth";
-import { AlertController } from 'ionic-angular';
+import { MenuController } from 'ionic-angular';
+import {AuthService} from "../../Services/Auth/auth.service";
 import {ManageUsersPage} from "../manage-users/manage-users";
-import {MyApp} from "../../app/app.component";
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import {ChatPage} from "../chat/chat";
+import {HelloIonicPage} from "../hello-ionic/hello-ionic";
 
 @Component({
   selector: 'page-login',
@@ -15,26 +15,22 @@ export class LoginPage {
   password:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public angularFireAuth: AngularFireAuth,public alertCtrl: AlertController,
-                public menu: MenuController) {
+              public menu: MenuController,public auth: AuthService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login(email,password){
-    this.angularFireAuth.auth.signInWithEmailAndPassword(email,password).then((user) => {
-      this.menu.enable(true, 'first');
-      this.menu.open('first');
-    }).catch( (error) => this.displayErrorAlert(error));
-  }
-  displayErrorAlert(error) {
-    const alert = this.alertCtrl.create({
-      title: 'Error!',
-      subTitle: error.message,
-      buttons: ['OK']
+  async login(email, password) {
+
+    await this.auth.signInWithEmail(email, password).then( (page) => {
+      if(page == true){
+        this.navCtrl.push(HelloIonicPage);
+      }else {
+        this.navCtrl.push(ChatPage);
+      }
     });
-    alert.present();
+
   }
 }

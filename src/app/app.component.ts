@@ -24,7 +24,7 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
 
-  rootPage = HelloIonicPage;
+  rootPage = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

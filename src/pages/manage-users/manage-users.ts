@@ -23,8 +23,4 @@ export class ManageUsersPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManageUsersPage');
   }
-  goToChat(){
-    this.navCtrl.push(ChatPage);
-  }
-
 }
