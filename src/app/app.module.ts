@@ -22,9 +22,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import {LoginPage} from "../pages/login/login";
-import {RouterModule, Routes} from "@angular/router";
 import {ChatRoomPage} from "../pages/chat-room/chat-room";
-import { FirebaseProvider } from '../providers/firebase/firebase';
 
 
 const fbConfig = {
@@ -81,8 +79,7 @@ const fbConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
