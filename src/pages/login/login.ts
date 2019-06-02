@@ -4,6 +4,7 @@ import { MenuController } from 'ionic-angular';
 import {AuthService} from "../../Services/Auth/auth.service";
 import {ManageUsersPage} from "../manage-users/manage-users";
 import {ChatPage} from "../chat/chat";
+import {HelloIonicPage} from "../hello-ionic/hello-ionic";
 
 @Component({
   selector: 'page-login',
@@ -25,7 +26,7 @@ export class LoginPage {
 
     await this.auth.signInWithEmail(email, password).then( (page) => {
       if(page == true){
-        this.navCtrl.push(ManageUsersPage);
+        this.navCtrl.push(HelloIonicPage);
       }else {
         this.navCtrl.push(ChatPage);
       }
