@@ -7,7 +7,7 @@ import {NavController} from "ionic-angular";
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  constructor(public navCtrl: NavController,) {
+  constructor(public navCtrl: NavController) {
   }
 
   goToChat(){
