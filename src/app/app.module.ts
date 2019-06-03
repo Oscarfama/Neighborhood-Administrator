@@ -23,6 +23,7 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import {LoginPage} from "../pages/login/login";
 import {ChatRoomPage} from "../pages/chat-room/chat-room";
+import { AnnouncementProvider } from '../providers/announcement/announcement';
 
 
 const fbConfig = {
@@ -79,7 +80,8 @@ const fbConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AnnouncementProvider
   ]
 })
 export class AppModule {}

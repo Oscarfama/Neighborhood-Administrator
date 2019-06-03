@@ -3,7 +3,6 @@ import {Component, Input, ViewChild} from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,7 +12,6 @@ import {ChatPage} from "../pages/chat/chat";
 import {AccountStatusPage} from "../pages/account-status/account-status";
 import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {ScanPage} from "../pages/scan/scan";
-import { LoginPage } from '../pages/login/login';
 
 
 @Component({

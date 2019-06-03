@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import {AuthService} from "../../Services/Auth/auth.service";
-import {ManageUsersPage} from "../manage-users/manage-users";
 import {ChatPage} from "../chat/chat";
 import {HelloIonicPage} from "../hello-ionic/hello-ionic";
 
