@@ -9,23 +9,16 @@
 
 <ion-content padding>
 
-  <h3>Bienvenido</h3>
+  <ion-card *ngFor="let card of cards">
+    <ion-card-header>
+      <ion-card-title>
+        <h2><b>{{card.header}}</b></h2>
+      </ion-card-title>
+    </ion-card-header>
 
-  <p>
-    Aqui podras revisar tus visitantes,agregar y ver tus visitantes preferentes, revisar tu estado de cuenta, asi como realizar tus pagos del mismo. 
-  </p>
-  <p>
-    Presiona el siguiente boton para abrir el menu. 
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Menu</button>
-  </p>
+    <ion-card-content justify-content-center align-items-center>
+      <p>{{card.message}}</p>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-fab right bottom>
-    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list side="top">
-      <button ion-fab color="secondary" (click)="goToChat()"><ion-icon name="chatbubbles"></ion-icon></button>
-      <button ion-fab color="secondary" (click)="scan()"><ion-icon name="qr-scanner"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
 </ion-content>

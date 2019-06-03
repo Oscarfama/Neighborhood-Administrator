@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
-import { switchMap, first, map } from 'rxjs/operators';
+import { switchMap, first } from 'rxjs/operators';
 import {AngularFireDatabase} from "@angular/fire/database";
 import {AlertController} from "ionic-angular";
 
