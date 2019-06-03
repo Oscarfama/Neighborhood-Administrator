@@ -8,5 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <preferred-user ngFor="let user of PreferredUsers"></preferred-user>
+  <ng-container *ngFor="let pruser of PreferredUsers">
+    <preferred-user [prUser]="pruser"></preferred-user>
+  </ng-container>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="addPreferredUser()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
 </ion-content>

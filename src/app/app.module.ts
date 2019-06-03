@@ -26,6 +26,11 @@ import {RouterModule, Routes} from "@angular/router";
 import {ChatComponent} from "../components/chat/chat.component";
 import {ChatRoomPage} from "../pages/chat-room/chat-room";
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { UserProvider } from '../providers/user/user';
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
+import {PreferredUser} from "../models/PreferredUser";
+import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
 
 
 const fbConfig = {
@@ -58,6 +63,7 @@ const appRoutes: Routes= [
     ScanPage,
     ManageUsersPage,
     LoginPage,
+    PreferredUserComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +74,8 @@ const appRoutes: Routes= [
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -89,7 +97,8 @@ const appRoutes: Routes= [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    FirebaseProvider,
+    UserProvider
   ]
 })
 export class AppModule {}
