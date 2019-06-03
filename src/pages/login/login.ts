@@ -1,6 +1,3 @@
-
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import {AuthService} from "../../Services/Auth/auth.service";
 import {ChatPage} from "../chat/chat";
@@ -42,12 +39,9 @@ export class LoginPage {
     public alertCtr: AlertController,
     private loading: LoadingController,
     private events: Events,
+    public auth: AuthService
   ) {}
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              public menu: MenuController,public auth: AuthService) {
-  }
 
   ionViewDidLoad() {}
 
