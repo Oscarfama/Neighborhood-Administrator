@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -10,7 +10,6 @@ import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
 import {LogPage} from "../pages/log/log";
 import {ChatPage} from "../pages/chat/chat";
 import {AccountStatusPage} from "../pages/account-status/account-status";
-import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {ScanPage} from "../pages/scan/scan";
 
 
@@ -40,7 +39,6 @@ export class MyApp {
       { title: 'Historial', component: LogPage },
       { title: 'Estado de cuenta', component: AccountStatusPage },
       { title: 'Chat con seguridad', component: ChatPage },
-      { title: 'Administrar usuarios', component: ManageUsersPage },
       { title: 'Escanear', component: ScanPage }
 
     ];

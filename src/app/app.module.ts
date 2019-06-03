@@ -14,7 +14,6 @@ import {ChatPage} from "../pages/chat/chat";
 import {LogPage} from "../pages/log/log";
 import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
 import {ScanPage} from "../pages/scan/scan";
-import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {AngularFireModule} from "@angular/fire";
 
 import { AngularFirestoreModule } from "@angular/fire/firestore";
@@ -56,7 +55,6 @@ const fbConfig = {
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage,
     LoginPage,
     PreferredUserComponent
   ],
@@ -84,7 +82,6 @@ const fbConfig = {
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage,
     LoginPage,
   ],
   providers: [
