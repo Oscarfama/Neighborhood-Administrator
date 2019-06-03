@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 
@@ -27,8 +27,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { UserProvider } from '../providers/user/user';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
-import {PreferredUser} from "../models/PreferredUser";
 import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
+import {VisitorPage} from "../pages/visitor/visitor";
 
 
 
@@ -46,15 +46,16 @@ const fbConfig = {
   declarations: [
     MyApp,
     ChatRoomPage,
-    HelloIonicPage,
+    HomePage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
     ChatPage,
-    HelloIonicPage,
+    HomePage,
     LogPage,
     PreferentAccessPage,
     ScanPage,
+    VisitorPage,
     LoginPage,
     PreferredUserComponent
   ],
@@ -72,15 +73,16 @@ const fbConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    HomePage,
     ChatRoomPage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
     ChatPage,
-    HelloIonicPage,
+    HomePage,
     LogPage,
     PreferentAccessPage,
+    VisitorPage,
     ScanPage,
     LoginPage,
   ],

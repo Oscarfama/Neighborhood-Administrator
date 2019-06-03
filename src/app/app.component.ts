@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
-import { HelloIonicPage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,6 +11,7 @@ import {LogPage} from "../pages/log/log";
 import {ChatPage} from "../pages/chat/chat";
 import {AccountStatusPage} from "../pages/account-status/account-status";
 import {ScanPage} from "../pages/scan/scan";
+import {VisitorPage} from "../pages/visitor/visitor";
 
 
 @Component({
@@ -19,9 +20,9 @@ import {ScanPage} from "../pages/scan/scan";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
+  // make HomePage the root (or first) page
 
-  rootPage = HelloIonicPage;
+  rootPage = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -39,6 +40,7 @@ export class MyApp {
       { title: 'Historial', component: LogPage },
       { title: 'Estado de cuenta', component: AccountStatusPage },
       { title: 'Chat con seguridad', component: ChatPage },
+      { title: 'Agregar Visita', component: VisitorPage },
       { title: 'Escanear', component: ScanPage }
 
     ];

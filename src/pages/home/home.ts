@@ -4,10 +4,10 @@ import {AnnouncementProvider} from "../../providers/announcement/announcement";
 import {Announcement} from "../../models/annoucencement";
 
 @Component({
-  selector: 'page-hello-ionic',
+  selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HelloIonicPage {
+export class HomePage {
 
   cards: Announcement[] = [];
 
