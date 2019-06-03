@@ -6,9 +6,8 @@ export class PreferredUser {
   color : string;
 
 
-  constructor()
+  constructor(obj)
   {
-
-
+    obj && Object.assign(this, obj);
   }
 }
