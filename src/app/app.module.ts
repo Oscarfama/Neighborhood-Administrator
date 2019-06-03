@@ -91,7 +91,7 @@ const fbConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AnnouncementProvider
+    AnnouncementProvider,
     FirebaseProvider,
     UserProvider
 
