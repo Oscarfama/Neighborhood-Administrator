@@ -26,7 +26,7 @@ export class LoginPage {
 
     await this.auth.signInWithEmail(email, password).then( (page) => {
       if(page == true){
-        this.navCtrl.push(HelloIonicPage);
+        this.navCtrl.setRoot(HelloIonicPage);
       }else {
         this.navCtrl.push(ChatPage);
       }
