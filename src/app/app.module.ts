@@ -24,6 +24,13 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
 import {LoginPage} from "../pages/login/login";
 import {ChatRoomPage} from "../pages/chat-room/chat-room";
 import { AnnouncementProvider } from '../providers/announcement/announcement';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+import { UserProvider } from '../providers/user/user';
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
+import {PreferredUser} from "../models/PreferredUser";
+import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
+
 
 
 const fbConfig = {
@@ -51,6 +58,7 @@ const fbConfig = {
     ScanPage,
     ManageUsersPage,
     LoginPage,
+    PreferredUserComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +68,8 @@ const fbConfig = {
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -82,6 +92,9 @@ const fbConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AnnouncementProvider
+    FirebaseProvider,
+    UserProvider
+
   ]
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {PreferredUser} from "../../models/PreferredUser";
+import {FirebaseProvider} from "../../providers/firebase/firebase";
 
 /**
  * Generated class for the PreferentAccessPage page.
@@ -14,13 +15,26 @@ import {PreferredUser} from "../../models/PreferredUser";
   templateUrl: 'preferent-access.html',
 })
 export class PreferentAccessPage {
+//public firebaseProvider : FirebaseProvider
+  PreferredUsers : PreferredUser[];
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public firebaseProvider : FirebaseProvider
 
-  PreferredUser : PreferredUser[];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+              ) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreferentAccessPage');
+    this.firebaseProvider.getPreferredUsers("mainuserid").
+      subscribe((preferredUsers : PreferredUser[])=> {
+        this.PreferredUsers = preferredUsers;
+        console.log(this.PreferredUsers);
+    });
   }
 
+  addPreferredUser() {
+
+  }
 }

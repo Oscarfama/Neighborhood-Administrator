@@ -1,17 +1,43 @@
-<ion-content padding center text-center>
-  <ion-title> Log In  </ion-title>
-  <ion-list>
-    <ion-item>
-      <ion-label floating> Email</ion-label>
-      <ion-input [(ngModel)] ="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating> Password</ion-label>
-      <ion-input type="password" [(ngModel)] ="password"></ion-input>
-    </ion-item>
-  </ion-list>
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button class="modal-close-button" (click)="close()" ion-button>
+        <ion-icon ios="md-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <img class="home-logo" src="assets/img/app/logo-negative.svg">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <button ion-button full (click)="login(email,password)">Log in</button>
+<ion-content padding>
+  <ion-title style="text-align:center">Sign In</ion-title>
+  <div class="card">
 
-
+    <form>
+      <ion-item>
+        <p class="error">{{error}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" #username name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" #password name="title"></ion-input>
+      </ion-item>
+      <div style="width:60%;margin: 0 auto;">
+        <button ion-button type="submit" (click)=" signInUser()" block>Sign in</button>
+      </div>
+      <ion-item>
+        <p style="text-align: center;line-height: 30px;">
+          <span (click)="goRegister()">Don't have an account?</span>
+        </p>
+        <p style="text-align: center;line-height: 30px;">
+          <span (click)="forgotPassword()">Forgot password</span>
+        </p>
+      </ion-item>
+    </form>
+  </div>
 </ion-content>
