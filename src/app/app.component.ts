@@ -24,7 +24,7 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
 
-  rootPage = LoginPage;
+  rootPage = HelloIonicPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -38,7 +38,6 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      {title: 'Inicio', component: LoginPage },
       { title: 'Acceso Preferente', component: PreferentAccessPage },
       { title: 'Historial', component: LogPage },
       { title: 'Estado de cuenta', component: AccountStatusPage },
@@ -62,6 +61,7 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
+    // this.nav.setRoot(page.component);
   }
 }
