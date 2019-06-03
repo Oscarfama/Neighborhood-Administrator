@@ -1,3 +1,10 @@
+
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { MenuController } from 'ionic-angular';
+import {AuthService} from "../../Services/Auth/auth.service";
+import {ChatPage} from "../chat/chat";
+import {HelloIonicPage} from "../hello-ionic/hello-ionic";
 import { Component, ViewChild } from '@angular/core';
 import {
   AlertController,
@@ -15,6 +22,7 @@ import { UserProvider } from '../../providers/user/user';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
 
 @Component({
   selector: 'page-login',
@@ -36,7 +44,23 @@ export class LoginPage {
     private events: Events,
   ) {}
 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public menu: MenuController,public auth: AuthService) {
+  }
+
   ionViewDidLoad() {}
 
+  async login(email, password) {
+
+    await this.auth.signInWithEmail(email, password).then( (page) => {
+      if(page == true){
+        this.navCtrl.setRoot(HelloIonicPage);
+      }else {
+        this.navCtrl.push(ChatPage);
+      }
+    });
+
+  }
 
 }

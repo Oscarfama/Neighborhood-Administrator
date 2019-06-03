@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
-import { switchMap, first, map } from 'rxjs/operators';
+import { switchMap, first } from 'rxjs/operators';
+import {AngularFireDatabase} from "@angular/fire/database";
+import {AlertController} from "ionic-angular";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -15,7 +16,9 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router
+    private _firebaseDb: AngularFireDatabase,
+    private _firebaseAuth: AngularFireAuth,
+    public alertCtrl: AlertController
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
@@ -26,6 +29,39 @@ export class AuthService {
         }
       })
     );
+  }
+
+  signInWithEmail(email,password){
+    var promise =  new Promise ( async(resolve, reject) => {
+      try {
+        const user = await this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+        const db = await this._firebaseDb.database.ref("/guards");
+        db.on("value", async snapshot => {
+          const uid = await user.user.uid;
+          try {
+            if (snapshot.child(uid).val()) {
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          } catch (e) {
+            this.displayErrorAlert("The user you tried to use, doesn't have enough access")
+          }
+        });
+      } catch (e) {
+        this.displayErrorAlert(e.message)
+      }
+    });
+    console.log(promise);
+    return promise;
+  }
+  displayErrorAlert(error) {
+    const alert = this.alertCtrl.create({
+      title: 'Error!',
+      subTitle: error,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   getUser() {
@@ -57,6 +93,6 @@ export class AuthService {
 
   async signOut() {
     await this.afAuth.auth.signOut();
-    return this.router.navigate(['/']);
+    // return this.router.navigate(['/']);
   }
 }
