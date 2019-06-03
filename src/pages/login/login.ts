@@ -1,7 +1,6 @@
-import { MenuController } from 'ionic-angular';
 import {AuthService} from "../../Services/Auth/auth.service";
 import {ChatPage} from "../chat/chat";
-import {HelloIonicPage} from "../hello-ionic/hello-ionic";
+import {HelloIonicPage} from "../home/home";
 import { Component, ViewChild } from '@angular/core';
 import {
   AlertController,
@@ -46,7 +45,6 @@ export class LoginPage {
   ionViewDidLoad() {}
 
   async login(email, password) {
-
     await this.auth.signInWithEmail(email, password).then( (page) => {
       if(page == true){
         this.navCtrl.setRoot(HelloIonicPage);
