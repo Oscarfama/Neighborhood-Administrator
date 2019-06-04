@@ -36,19 +36,25 @@ import {Observable} from "rxjs";
     });
   }
   public getPreferredUser(
-    userid: string
-  ): Observable<PreferredUser> {
-    console.log("getPreferredUser()");
+    userid: string, prUserId: string
+  ): Observable<PreferredUser[]> {
+    console.log("getPreferredUsers()");
     return Observable.create(observer => {
-      let preferredUser: PreferredUser;
+      let preferredUsers: PreferredUser[] = [];
       this.db.database
         .ref('preferred-users/' + userid )
         .once('value')
         .then(snapshot => {
           snapshot.forEach( value => {
-            preferredUser = new PreferredUser(value.toJSON());
+            preferredUsers.push(new PreferredUser(value.toJSON()));
           });
-          observer.next(preferredUser);
+          let preferredUser : PreferredUser[];
+          preferredUsers.forEach(user=>{
+            if(user.id == prUserId){
+              preferredUser.push(user);
+            }
+          });
+          observer.next(preferredUsers);
           return;
         });
     });

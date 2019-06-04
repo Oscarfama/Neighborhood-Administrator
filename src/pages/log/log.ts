@@ -15,20 +15,24 @@ import {EntranceProvider} from "../../providers/entrance/entrance";
   templateUrl: 'log.html',
 })
 export class LogPage {
-  entrances: Entrance[];
+  Entrances: Entrance[];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public entranceProvider: EntranceProvider) {
 
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LogPage');
+
+  }
   ionViewWillEnter() {
     console.log('ionViewDidLoad LogPage');
     this.entranceProvider.getEntrances("mainuserid").
     subscribe((entrances : Entrance[])=> {
-      this.entrances = entrances;
-      console.log(this.entrances);
-      console.log(this.entrances.length);
+      this.Entrances = entrances;
+      console.log(this.Entrances);
+      console.log(this.Entrances.length);
     });
   }
 

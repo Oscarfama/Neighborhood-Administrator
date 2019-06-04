@@ -21,13 +21,18 @@ export class LogRecordComponent {
 
   @Input() entrance : Entrance;
 
-  @Output() delete : EventEmitter<any> = new EventEmitter<any>();
   timeEnter: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams
              ) {
     console.log('Hello LogRecord Component');
-    console.log(this.entrance);
+
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LogRecordComponent');
+
+  }
+  ionViewWillEnter(){
     this.timestampToString();
   }
   timestampToString(){
