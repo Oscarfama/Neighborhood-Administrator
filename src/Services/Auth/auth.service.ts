@@ -74,8 +74,27 @@ export class AuthService {
   }
 
   private async oAuthLogin(provider) {
-    const credential = await this.afAuth.auth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
+    var promise =  new Promise ( async(resolve, reject) => {
+      try {
+        const user = await this.afAuth.auth.signInWithPopup(provider);
+        const db = await this._firebaseDb.database.ref("/user");
+        db.on("value", async snapshot => {
+          const uid = await user.user.uid;
+          try {
+            if (snapshot.child(uid).val()) {
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          } catch (e) {
+            this.displayErrorAlert("The user you tried to use, doesn't have enough access")
+          }
+        });
+      } catch (e) {
+        this.displayErrorAlert(e.message)
+      }
+    });
+    return promise;
   }
 
   private updateUserData({ uid, email, displayName, photoURL }) {

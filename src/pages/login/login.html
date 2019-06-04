@@ -1,12 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons left>
-      <button class="modal-close-button" (click)="close()" ion-button>
-        <ion-icon ios="md-close" md="md-close"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-title>
-      <img class="home-logo" src="assets/img/app/logo-negative.svg">
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -21,14 +15,20 @@
       </ion-item>
       <ion-item>
         <ion-label>Email</ion-label>
-        <ion-input type="text" #username name="title"></ion-input>
+        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Password</ion-label>
-        <ion-input type="password" #password name="title"></ion-input>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
       <div style="width:60%;margin: 0 auto;">
-        <button ion-button type="submit" (click)=" signInUser()" block>Sign in</button>
+        <button ion-button type="submit" (click)=" login(email,password)" block>Sign in</button>
+       <!-- <button ion-button type="submit" (click)=" loginGoogle()" block>
+            <div class="left">
+              <img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+            </div>
+            Login with Google
+        </button> -->
       </div>
       <ion-item>
         <p style="text-align: center;line-height: 30px;">

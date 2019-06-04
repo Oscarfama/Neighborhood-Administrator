@@ -12,6 +12,7 @@ import {ChatPage} from "../pages/chat/chat";
 import {AccountStatusPage} from "../pages/account-status/account-status";
 import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {ScanPage} from "../pages/scan/scan";
+import {LoginPage} from "../pages/login/login";
 
 
 @Component({
@@ -22,7 +23,7 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
 
-  rootPage = HelloIonicPage;
+  rootPage = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

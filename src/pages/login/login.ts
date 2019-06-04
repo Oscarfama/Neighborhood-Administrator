@@ -26,10 +26,8 @@ import { UserProvider } from '../../providers/user/user';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  @ViewChild('username')
-  username;
-  @ViewChild('password')
-  password;
+  email: string;
+  password: string;
   error = '';
 
   constructor(
@@ -45,16 +43,24 @@ export class LoginPage {
 
   ionViewDidLoad() {}
 
-  async login(email, password) {
-
-    await this.auth.signInWithEmail(email, password).then( (page) => {
+  login(email, password) {
+    this.auth.signInWithEmail(email, password).then( (page) => {
       if(page == true){
         this.navCtrl.setRoot(HelloIonicPage);
       }else {
-        this.navCtrl.push(ChatPage);
+        this.navCtrl.setRoot(HelloIonicPage);
       }
-    });
-
+    }).catch((error) => this.displayErrorAlert(error));
+  }
+  async loginGoogle(){
+  }
+  displayErrorAlert(error){
+     const alert = this.alertCtr.create({
+       title: 'Error!',
+       subTitle: error.message,
+       buttons: ['OK']
+     });
+     alert.present();
   }
 
 }
