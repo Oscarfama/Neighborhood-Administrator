@@ -30,6 +30,8 @@ import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
 import {PreferredUser} from "../models/PreferredUser";
 import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
+import {AddPreferredUserPage} from "../pages/add-preferred-user/add-preferred-user";
+import { PreferredUserProvider } from '../providers/preferred-user/preferred-user';
 
 
 
@@ -58,7 +60,8 @@ const fbConfig = {
     ScanPage,
     ManageUsersPage,
     LoginPage,
-    PreferredUserComponent
+    PreferredUserComponent,
+    AddPreferredUserPage
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ const fbConfig = {
     ScanPage,
     ManageUsersPage,
     LoginPage,
+    AddPreferredUserPage
   ],
   providers: [
     StatusBar,
@@ -93,7 +97,8 @@ const fbConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AnnouncementProvider,
     FirebaseProvider,
-    UserProvider
+    UserProvider,
+    PreferredUserProvider
 
   ]
 })

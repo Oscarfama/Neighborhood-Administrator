@@ -1,20 +1,34 @@
 <!-- Generated template for the PreferredUserComponent component -->
 <div>
-  <ion-card>
-    <ion-item-divider>
-      <div class="title" item-start>
-        <ion-icon name="person"></ion-icon>
-        <span>{{prUser.name}}</span>
-      </div>
-    </ion-item-divider>
-    <div>
-      <span>{{prUser.brand}}</span>
-    </div>
-    <div>
-      <span>{{prUser.model}}</span>
-    </div>
-    <div>
-      <span>{{prUser.color}}</span>
-    </div>
-  </ion-card>
+    <ion-card>
+      <ion-item-divider>
+
+
+            <ion-icon name="person"></ion-icon>
+
+            <span>     {{prUser.name}} {{prUser.lastname}}</span>
+
+      </ion-item-divider>
+      <ion-item>
+        <ion-row>
+          <p><span>Marca: {{prUser.brand}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Modelo: {{prUser.model}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Color: {{prUser.color}}</span></p>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="red" (click)="deletePreferredUser()">Eliminar</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="red" (click)="goToEditPerson()">Editar</button>
+          </ion-col>
+        </ion-row>
+
+      </ion-item>
+    </ion-card>
+
 </div>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {PreferredUser} from "../../models/PreferredUser";
-import {FirebaseProvider} from "../../providers/firebase/firebase";
+import {AddPreferredUserPage} from "../add-preferred-user/add-preferred-user";
+import {PreferredUserProvider} from "../../providers/preferred-user/preferred-user";
 
 /**
  * Generated class for the PreferentAccessPage page.
@@ -15,11 +16,12 @@ import {FirebaseProvider} from "../../providers/firebase/firebase";
   templateUrl: 'preferent-access.html',
 })
 export class PreferentAccessPage {
-//public firebaseProvider : FirebaseProvider
+
   PreferredUsers : PreferredUser[];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public firebaseProvider : FirebaseProvider
+              public preferredUserProvider : PreferredUserProvider
 
               ) {
 
@@ -27,14 +29,20 @@ export class PreferentAccessPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreferentAccessPage');
-    this.firebaseProvider.getPreferredUsers("mainuserid").
-      subscribe((preferredUsers : PreferredUser[])=> {
-        this.PreferredUsers = preferredUsers;
-        console.log(this.PreferredUsers);
+
+  }
+  ionViewWillEnter(){
+    this.chargeUsers();
+  }
+  chargeUsers(){
+    this.preferredUserProvider.getPreferredUsers("mainuserid").
+    subscribe((preferredUsers : PreferredUser[])=> {
+      this.PreferredUsers = preferredUsers;
+      console.log(this.PreferredUsers);
     });
   }
 
   addPreferredUser() {
-
+    this.navCtrl.push(AddPreferredUserPage,{prUser: new PreferredUser(),add: true});
   }
 }
