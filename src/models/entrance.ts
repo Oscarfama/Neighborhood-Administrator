@@ -3,6 +3,8 @@ export class Entrance {
   preferredUserId : string;
   visitorId : string;
   timestamp : string;
+  visitorname: string;
+  ispreferred: boolean;
 
   constructor(obj?: any)
   {

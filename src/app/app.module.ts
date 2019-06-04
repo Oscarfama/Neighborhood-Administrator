@@ -32,6 +32,9 @@ import {PreferredUser} from "../models/PreferredUser";
 import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
 import {AddPreferredUserPage} from "../pages/add-preferred-user/add-preferred-user";
 import { PreferredUserProvider } from '../providers/preferred-user/preferred-user';
+import { VisitorProvider } from '../providers/visitor/visitor';
+import { EntranceProvider } from '../providers/entrance/entrance';
+import {LogRecordComponent} from "../components/log-record/log-record";
 
 
 
@@ -61,6 +64,7 @@ const fbConfig = {
     ManageUsersPage,
     LoginPage,
     PreferredUserComponent,
+    LogRecordComponent,
     AddPreferredUserPage
   ],
   imports: [
@@ -98,7 +102,9 @@ const fbConfig = {
     AnnouncementProvider,
     FirebaseProvider,
     UserProvider,
-    PreferredUserProvider
+    PreferredUserProvider,
+    VisitorProvider,
+    EntranceProvider
 
   ]
 })
