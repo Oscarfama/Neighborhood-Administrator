@@ -1,0 +1,19 @@
+<!-- Generated template for the LogRecordComponent component -->
+<div>
+  <ion-card>
+    <ion-item-divider>
+      <ion-icon name="car"></ion-icon>
+      <span>     {{entrance.visitorname}}</span>
+
+    </ion-item-divider>
+    <ion-item>
+      <ion-row>
+        <p><span>Hora entrada: {{timeEnter}}</span></p>
+      </ion-row>
+      <ion-row>
+          <button ion-button color="red" (click)="goToDetailsEntrance()">Detalles</button>
+      </ion-row>
+
+    </ion-item>
+  </ion-card>
+</div>
