@@ -1,0 +1,59 @@
+<!--
+  Generated template for the LogDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>LogDetails</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ng-container *ngIf="entrance.ispreferred">
+        <ion-row>
+          <p><span>Nombre completo: {{prUser.name}} {{prUser.lastname}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Placas: {{prUser.carplates}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Marca: {{prUser.brand}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Modelo: {{prUser.model}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Color: {{prUser.color}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Año: {{prUser.year}}</span></p>
+        </ion-row>
+      </ng-container>
+      <ng-container *ngIf="!entrance.ispreferred">
+        <ion-row>
+          <p><span>Nombre completo: {{visitor.name}} {{visitor.lastname}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Placas: {{visitor.carplates}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Marca: {{visitor.brand}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Modelo: {{visitor.model}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Color: {{visitor.color}}</span></p>
+        </ion-row>
+        <ion-row>
+          <p><span>Año: {{visitor.year}}</span></p>
+        </ion-row>
+      </ng-container>
+
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,8 +1,10 @@
 export class Entrance {
   id : string;
-  preferredUserId : string;
-  visitorId : string;
+  pruserid : string;
+  visitorid : string;
   timestamp : string;
+  visitorname: string;
+  ispreferred: boolean;
 
   constructor(obj?: any)
   {
