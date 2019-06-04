@@ -9,7 +9,7 @@
 
 <ion-content>
   <ng-container *ngFor="let pruser of PreferredUsers">
-    <preferred-user [prUser]="pruser"></preferred-user>
+    <preferred-user [prUser]="pruser" (delete)="chargeUsers()"></preferred-user>
   </ng-container>
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="addPreferredUser()"><ion-icon name="add"></ion-icon></button>

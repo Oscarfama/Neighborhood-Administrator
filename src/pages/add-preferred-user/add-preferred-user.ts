@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {PreferredUser} from "../../models/PreferredUser";
+import {PreferredUserProvider} from "../../providers/preferred-user/preferred-user";
 
 /**
  * Generated class for the AddPreferredUserPage page.
@@ -14,12 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-preferred-user.html',
 })
 export class AddPreferredUserPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  randomstring = require("randomstring");
+  public prUser : PreferredUser = new PreferredUser();
+  public add : boolean;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public preferredUserProvider: PreferredUserProvider) {
+    this.prUser = this.navParams.get('prUser');
+    this.add = this.navParams.get('add');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddPreferredUserPage');
   }
 
+  saveOnFirebase() {
+    this.prUser.id = this.randomstring.generate();
+    this.preferredUserProvider.savePreferredUser("mainuserid",this.prUser);
+    this.navCtrl.pop();
+  }
+
+  updateOnFirebase() {
+    this.preferredUserProvider.updatePreferredUser("mainuserid",this.prUser);
+    this.navCtrl.pop();
+  }
 }
