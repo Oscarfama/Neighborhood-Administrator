@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {PreferredUser} from "../../models/PreferredUser";
 import {PreferredUserProvider} from "../../providers/preferred-user/preferred-user";
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the AddPreferredUserPage page.

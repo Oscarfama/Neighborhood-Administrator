@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Agregar Visitante
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="card">
+    <form (ngSubmit)="addVisitorClick()" #addcard="ngForm" >
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.FirstName" name="first"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.LastName" name="last"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Calle</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.HouseStreet" name="street"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Numero de casa</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.HouseNumber" name="number" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Modelo de coche</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.VehicleModel" name="model"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Placas</ion-label>
+        <ion-input type="text" [(ngModel)]="visitor.VehicleNumber" name="VehicleNumber"></ion-input>
+      </ion-item>
+
+      <button ion-button type="submit" block [disabled]="!addcard.form.valid">Agregar Visitante</button>
+    </form>
+  </div>
+</ion-content>

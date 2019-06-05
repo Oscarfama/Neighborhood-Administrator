@@ -5,10 +5,10 @@ import {Announcement} from "../../models/annoucencement";
 import {AuthService} from "../../Services/Auth/auth.service";
 
 @Component({
-  selector: 'page-hello-ionic',
-  templateUrl: 'hello-ionic.html'
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
-export class HelloIonicPage {
+export class HomePage {
 
   cards: Announcement[] = [];
 

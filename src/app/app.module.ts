@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { HomePage } from '../pages/home/home';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 
@@ -14,7 +14,6 @@ import {ChatPage} from "../pages/chat/chat";
 import {LogPage} from "../pages/log/log";
 import {PreferentAccessPage} from "../pages/preferent-access/preferent-access";
 import {ScanPage} from "../pages/scan/scan";
-import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {AngularFireModule} from "@angular/fire";
 
 import { AngularFirestoreModule } from "@angular/fire/firestore";
@@ -28,8 +27,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { UserProvider } from '../providers/user/user';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
-import {PreferredUser} from "../models/PreferredUser";
 import {PreferredUserComponent} from "../components/preferred-user/preferred-user";
+import {VisitorPage} from "../pages/visitor/visitor";
 import {AddPreferredUserPage} from "../pages/add-preferred-user/add-preferred-user";
 import { PreferredUserProvider } from '../providers/preferred-user/preferred-user';
 import { VisitorProvider } from '../providers/visitor/visitor';
@@ -53,16 +52,16 @@ const fbConfig = {
   declarations: [
     MyApp,
     ChatRoomPage,
-    HelloIonicPage,
+    HomePage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
     ChatPage,
-    HelloIonicPage,
+    HomePage,
     LogPage,
     PreferentAccessPage,
     ScanPage,
-    ManageUsersPage,
+    VisitorPage,
     LoginPage,
     PreferredUserComponent,
     LogRecordComponent,
@@ -83,17 +82,17 @@ const fbConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    HomePage,
     ChatRoomPage,
     ItemDetailsPage,
     ListPage,
     AccountStatusPage,
     ChatPage,
-    HelloIonicPage,
+    HomePage,
     LogPage,
     PreferentAccessPage,
+    VisitorPage,
     ScanPage,
-    ManageUsersPage,
     LoginPage,
     AddPreferredUserPage,
     LogDetailsPage
