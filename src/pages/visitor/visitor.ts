@@ -41,7 +41,7 @@ export class VisitorPage {
   }
 
   async addVisitorClick() {
-    await this.db.list('/visitor').push(this.visitor);
+    await this.db.list('/').push(this.visitor);
     this.navCtrl.setRoot(HomePage);
   }
 

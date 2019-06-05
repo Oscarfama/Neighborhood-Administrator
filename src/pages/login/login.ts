@@ -2,7 +2,7 @@ import {AuthService} from "../../Services/Auth/auth.service";
 import {ChatPage} from "../chat/chat";
 import {HomePage} from "../home/home";
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
@@ -16,7 +16,9 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public auth: AuthService
+    public auth: AuthService,
+    public alertCtr: AlertController
+
   ) {}
 
 
@@ -27,7 +29,7 @@ export class LoginPage {
       if(page == true){
         this.navCtrl.setRoot(HomePage);
       }else {
-        this.navCtrl.setRoot(HelloIonicPage);
+        this.navCtrl.setRoot(HomePage);
       }
     }).catch((error) => this.displayErrorAlert(error));
   }

@@ -1,12 +1,12 @@
 export class Visitor {
-  FirstName: string;
-  LastName: string;
-  HouseStreet:string;
-  HouseNumber: string;
-  VehicleModel?: string;
-  VehicleNumber: string;
-}
-tring;
+  name : string;
+  lastname: string;
+  carplates : string;
+  brand : string;
+  model : string;
+  color : string;
+  year : string;
+  id : string;
 
   constructor(obj?: any)
   {

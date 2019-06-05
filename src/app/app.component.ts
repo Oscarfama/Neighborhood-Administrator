@@ -41,8 +41,7 @@ export class MyApp {
       { title: 'Historial', component: LogPage },
       { title: 'Estado de cuenta', component: AccountStatusPage },
       { title: 'Chat con seguridad', component: ChatPage },
-      { title: 'Agregar Visita', component: VisitorPage },
-      { title: 'Escanear', component: ScanPage }
+      { title: 'Escanear', component: VisitorPage }
 
     ];
   }
