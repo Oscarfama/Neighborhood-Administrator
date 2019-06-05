@@ -6,3 +6,11 @@ export class Visitor {
   VehicleModel?: string;
   VehicleNumber: string;
 }
+tring;
+
+  constructor(obj?: any)
+  {
+    obj && Object.assign(this, obj);
+  }
+
+}
