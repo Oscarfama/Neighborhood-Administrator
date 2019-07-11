@@ -25,7 +25,9 @@ export class VisitorPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private formBuilder: FormBuilder, private db: AngularFireDatabase) {
+
     this.visitor = new Visitor();
+
 
     this.formValidator = this.formBuilder.group({
       firstname: ['', Validators.required],
@@ -41,7 +43,7 @@ export class VisitorPage {
   }
 
   async addVisitorClick() {
-    await this.db.list('/').push(this.visitor);
+    await this.db.list('/mainuserid/entrance3/').push({id:"entraceid", ispreferred:true,timestamp:"123123",visitorname:"Juan"});
     this.navCtrl.setRoot(HomePage);
   }
 

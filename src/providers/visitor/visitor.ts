@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
 import {Observable} from "rxjs";
 import {PreferredUser} from "../../models/PreferredUser";
-import {Visitor} from "../../models/visitor";
+import {Visitor} from "../../models/Visitor";
 
 /*
   Generated class for the VisitorProvider provider.

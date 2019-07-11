@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {PreferredUser} from "../../models/PreferredUser";
 import {Entrance} from "../../models/entrance";
-import {Visitor} from "../../models/visitor";
+import {Visitor} from "../../models/Visitor";
 import {PreferredUserProvider} from "../../providers/preferred-user/preferred-user";
 import {VisitorProvider} from "../../providers/visitor/visitor";
 
